@@ -1,3 +1,4 @@
+import BestSellers from "@/components/BestSellers";
 import Header from "@/components/Header";
 import Latest from "@/components/Latest";
 import Trending from "@/components/Trending";
@@ -8,7 +9,8 @@ export default function Home() {
     <>
       <Header />
       <Trending />
-      <Latest />      
+      <Latest />  
+      <BestSellers />    
     </>
   );
 }
