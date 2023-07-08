@@ -3,7 +3,7 @@ import React from 'react'
 
 const Trending = () => {
     return (
-        <section className='pb-20 mx-16 border-b border-slate-200'>
+        <section className='pb-20 mx-16 border-b border-slate-300'>
             <nav className="flex items-center justify-between border-slate-300 border-b py-3">
 
                 <p className="text-3xl logo-span">
