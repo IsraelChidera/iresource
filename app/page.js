@@ -1,14 +1,12 @@
-import Resources from "@/components/Resources";
+import Header from "@/components/Header";
+import Trending from "@/components/Trending";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <>
-      <h1 className="text-4xl" style={{ fontFamily: "HeaderFont" }}>
-        Digital agency
-      </h1>
-
-      <Resources/>
+      <Header />
+      <Trending />      
     </>
   );
 }
