@@ -1,9 +1,19 @@
-import Image from "next/image"
+import { useQuery } from "@tanstack/react-query";
+import Image from "next/image";
 
+const Header = ({data}) => {      
 
-const Header = () => {
     return (
         <section className="pt-5 border-b border-slate-300 pb-16 mx-16">
+            <h1>
+                {
+                    // data?.map((x) => (
+                    //     <span>
+                    //         {x.title}
+                    //     </span>
+                    // ))
+                }
+            </h1>
             <div className="md:grid grid-cols-5 gap-x-4">
                 <div className="col-span-3 border-r border-slate-300 pr-4">
                     <div >
