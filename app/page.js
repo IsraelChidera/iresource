@@ -6,9 +6,10 @@ import Latest from "@/components/Latest";
 import Newsletter from "@/components/Newsletter";
 import Trending from "@/components/Trending";
 
-async function getData() {
-  const baseUrl = '';
-  const res = await fetch("https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=imPLNZGw2ijLYCl0aaU2bGkhwHWotpZE");
+async function getTopStories() {
+  const baseUrl = 'https://api.nytimes.com/svc/topstories/v2/arts.json';
+  const apiKey = process.env.API_KEY;
+  const res = await fetch(`${baseUrl}?api-key=${apiKey}`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -18,7 +19,7 @@ async function getData() {
 }
 
 export default async function Home() {
-  const data = await getData();
+  const data = await getTopStories();
   console.log(data);
 
   return (
