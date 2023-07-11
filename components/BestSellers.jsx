@@ -1,13 +1,13 @@
 import Link from 'next/link'
 import React from 'react'
 
-const BestSellers = () => {
+const BestSellers = ({ data }) => {
     return (
         <section className='pb-20 mx-16 border-b border-slate-300'>
             <nav className="flex items-center justify-between border-slate-300 border-b py-3">
 
                 <p className="text-3xl logo-span">
-                    BESTSELLERS OF THE MONTH
+                    NYT BEST SELLERS
                 </p>
 
                 <Link href="#" className='text-sm underline text-slate-500 '>
@@ -25,130 +25,36 @@ const BestSellers = () => {
                     </div>
                 </div>
 
-                <div className='grid grid-cols-4 gap-x-6 mt-4'>
-                    <div>
-                        <div>
-                            {/* <Image 
-                            src=""
-                            width={500}
-                            height={500}
-                            alt="fssff"
-                                />
-                            */}
-                            <div style={{}} className="w-full h-72 bg-white">
-                            </div>
-                        </div>
+                <div className='mt-4 grid grid-cols-4 space-x-10'>
 
-                        <div className=' mt-4'>
-                            <div className='space-y-2'>
-                                <h2 className="text-lg leading-6">
-                                    What's Mine and Yours
-                                </h2>
+                    {
+                        data?.results.books.slice(0, 4).map((bestSellers) => (
+                            <section  className=''>
+                                <div>
+                                    <div >
+                                        <img  style={{ width: "100%", height: "250px" }} src={bestSellers.book_image} alt="best sellers image" />
+                                    </div>
 
-                                <p className="text-xs tracking-wide text-slate-500">
-                                    BY HASLEY STREET
-                                </p>
-                            </div>
+                                    <div className=' mt-4'>
+                                        <div className='space-y-2'>
+                                            <h2 className="text-lg capitalize leading-6">
+                                                {bestSellers.title}
+                                            </h2>
 
-                            <button className='py-3 mt-6 logo-span text-center w-full text-sm  border border-black'>
-                                Buy for $14.99
-                            </button>
-                        </div>
+                                            <p className="text-xs uppercase tracking-wide text-slate-500">
+                                                {bestSellers.author}
+                                            </p>
 
-                    </div>
+                                            <button className='py-3 mt-6 logo-span text-center w-full text-sm  border border-black'>
+                                                ${bestSellers.price}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section >
+                        ))
+                    }
 
-                    <div>
-                        <div>
-                            {/* <Image 
-                            src=""
-                            width={500}
-                            height={500}
-                            alt="fssff"
-                                />
-                            */}
-                            <div style={{}} className="w-full h-72 bg-white">
-                            </div>
-                        </div>
-
-                        <div className=' mt-4'>
-                            <div className='space-y-2'>
-                                <h2 className="text-lg leading-6">
-                                    The Committed: A Novel
-                                </h2>
-
-                                <p className="text-xs tracking-wide text-slate-500">
-                                    BY VEET THANGH NGUYEN
-                                </p>
-                            </div>
-
-                            <button className='py-3 mt-6 logo-span text-center w-full text-sm  border border-black'>
-                                Buy for $14.99
-                            </button>
-                        </div>
-
-                    </div>
-
-                    <div>
-                        <div>
-                            {/* <Image 
-                            src=""
-                            width={500}
-                            height={500}
-                            alt="fssff"
-                                />
-                            */}
-                            <div style={{}} className="w-full h-72 bg-white">
-                            </div>
-                        </div>
-
-                        <div className=' mt-4'>
-                            <div className='space-y-2'>
-                                <h2 className="text-lg leading-6">
-                                    Come Fly The World: Stories
-                                </h2>
-
-                                <p className="text-xs tracking-wide text-slate-500">
-                                    BY JULIA COOKE
-                                </p>
-                            </div>
-
-                            <button className='py-3 mt-6 logo-span text-center w-full text-sm  border border-black'>
-                                Buy for $14.99
-                            </button>
-                        </div>
-
-                    </div>
-
-                    <div>
-                        <div>
-                            {/* <Image 
-                            src=""
-                            width={500}
-                            height={500}
-                            alt="fssff"
-                                />
-                            */}
-                            <div style={{}} className="w-full h-72 bg-white">
-                            </div>
-                        </div>
-
-                        <div className=' mt-4'>
-                            <div className='space-y-2'>
-                                <h2 className="text-lg leading-6">
-                                    klara and the Sun: A novel
-                                </h2>
-
-                                <p className="text-xs tracking-wide text-slate-500">
-                                    BY Kazuo Ishig
-                                </p>
-                            </div>
-
-                            <button className='py-3 mt-6 logo-span text-center w-full text-sm  border border-black'>
-                                Buy for $12.99
-                            </button>
-                        </div>
-
-                    </div>
                 </div>
             </div>
         </section>

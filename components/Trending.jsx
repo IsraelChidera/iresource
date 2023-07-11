@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-const Trending = () => {
+const Trending = ({ data }) => {
     return (
         <section className='pb-20 mx-16 border-b border-slate-300'>
             <nav className="flex items-center justify-between border-slate-300 border-b py-3">
@@ -26,104 +26,57 @@ const Trending = () => {
                     </div>
                 </div>
 
+
                 <div className='grid grid-cols-3 gap-x-10 mt-4'>
-                    <div >
-                        {/* <Image 
-                        src=""
-                        width={500}
-                        height={500}
-                        alt="fssff"
-                            />
-                         */}
-                        <div style={{}} className="w-full h-40 bg-white">
-                        </div>
+                    {data.results.slice(4, 7).map((section) => (
+                        <>
+                            <div>
+                                <div style={{}} className="w-full">
 
-                        <div className="font-light text-xs text-slate-400 mt-2 flex items-center justify-between">
-                            <p className="space-x-3">
-                                <span> July 11 </span> {' '}
-                                <span> 2 mins read </span>
-                            </p>
+                                    {section.multimedia?.slice(2, 3).map((x) => (
+                                        <>
+                                            <img
+                                                src={x.url}
+                                                alt={x.copyright}
+                                            />
+                                        </>
+                                    ))}
 
-                            <div className="relative logo-span">
-                                <div className="absolute top-1.5 -left-10 h-px w-5 bg-slate-600"></div>
-                                <p>By Glenj Josh</p>
+                                </div>
+
+                                <div className="font-light text-xs text-slate-400 mt-2 flex items-center justify-between">
+                                    <p className="space-x-3">
+                                        <span> {section.published_date.slice(0, 10)}</span> {' '}
+                                        <span> {section.section} </span>
+                                    </p>
+
+                                    <div className="relative logo-span">
+                                        <div className="absolute top-1.5 -left-10 h-px w-5 bg-slate-600"></div>
+                                        <p> {section.byline} </p>
+                                    </div>
+                                </div>
+
+                                <div className="mt-2">
+                                    <h1 className="text-lg leading-6">
+                                        {section.title}
+                                    </h1>
+
+                                    <p className="text-xs tracking-wide text-slate-500 mt-2">
+                                        {section.abstract}
+                                    </p>
+
+                                    <div className="">
+                                        <a className="text-xs hover:text-slate-700 underline text-slate-500" href={section.url}>
+                                            Read Full Article
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
 
-                        <div className="mt-2">
-                            <h1 className="text-xl leading-6">
-                                A Brit in America Makes Sense of the
-                                Meghan Markle Oprah 
-                                Interview
-                            </h1>
-                            
-                        </div>
-                    </div>
-
-                    <div >
-                        {/* <Image 
-                        src=""
-                        width={500}
-                        height={500}
-                        alt="fssff"
-                            />
-                         */}
-                        <div style={{}} className="w-full h-40 bg-white">
-                        </div>
-
-                        <div className="font-light text-xs text-slate-400 mt-2 flex items-center justify-between">
-                            <p className="space-x-3">
-                                <span> July 11 </span> {' '}
-                                <span> 2 mins read </span>
-                            </p>
-
-                            <div className="relative logo-span">
-                                <div className="absolute top-1.5 -left-10 h-px w-5 bg-slate-600"></div>
-                                <p>By Glenj Josh</p>
-                            </div>
-                        </div>
-
-                        <div className="mt-2">
-                            <h1 className="text-xl leading-6">
-                                In Deborah Robert's Art, an Interrogation of What Society
-                                Imposes on Black Children
-                            </h1>
-                            
-                        </div>
-                    </div>
-
-                    <div >
-                        {/* <Image 
-                        src=""
-                        width={500}
-                        height={500}
-                        alt="fssff"
-                            />
-                         */}
-                        <div style={{}} className="w-full h-40 bg-white">
-                        </div>
-
-                        <div className="font-light text-xs text-slate-400 mt-2 flex items-center justify-between">
-                            <p className="space-x-3">
-                                <span> July 11 </span> {' '}
-                                <span> 2 mins read </span>
-                            </p>
-
-                            <div className="relative logo-span">
-                                <div className="absolute top-1.5 -left-10 h-px w-5 bg-slate-600"></div>
-                                <p>By Glenj Josh</p>
-                            </div>
-                        </div>
-
-                        <div className="mt-2">
-                            <h1 className="text-xl leading-6">
-                                Spring Skirts Have Sprung - 6 Ways
-                                to Wear Them All Season Long
-                            </h1>
-                            
-                        </div>
-                    </div>
+                        </>
+                    ))}
                 </div>
+
             </div>
         </section>
     )
