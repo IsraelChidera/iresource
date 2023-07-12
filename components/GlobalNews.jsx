@@ -3,15 +3,15 @@ import React from 'react'
 
 const GlobalNews = ({ data }) => {
     return (
-        <section className='pb-20 mx-16 border-b border-slate-300'>
-            <nav className="flex items-center justify-between border-slate-300 border-b py-3">
+        <section className='pb-20 md:mx-16 mx-4 border-b border-slate-300'>
+            <nav className="md:flex items-center justify-between border-slate-300 border-b py-3">
 
-                <p className="text-3xl logo-span">
+                <p className="md:text-3xl text-lg logo-span">
                     THE LATEST NEWS ARTICLES
                 </p>
 
 
-                <Link href="#" className='text-sm underline text-slate-500 '>
+                <Link href="#" className='text-xs md:text-sm underline text-slate-500 '>
                     View all
                 </Link>
             </nav>
@@ -20,7 +20,7 @@ const GlobalNews = ({ data }) => {
                 <div className='space-y-20'>
                     {
                         data.results.slice(4, 10).map((section) => (
-                            <div className='grid grid-cols-3 space-x-20'>
+                            <div className='md:grid grid-cols-3 space-x-20'>
                                 <div className='col-span-1'>
                                     {section.media?.map((img) => (
                                         img['media-metadata'].slice(2, 3).map((x) => (
@@ -31,7 +31,7 @@ const GlobalNews = ({ data }) => {
                                     ))}
                                 </div>
 
-                                <div className='col-span-2'>
+                                <div className='col-span-2 mt-4 md:mt-0'>
                                     <div className="relative logo-span">
                                         <div className="absolute top-1.5 -left-10 h-px w-5 bg-slate-600"></div>
                                         <p className='text-sm'>{section.byline}</p>

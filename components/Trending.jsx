@@ -3,15 +3,15 @@ import React from 'react'
 
 const Trending = ({ data }) => {
     return (
-        <section className='pb-20 mx-16 border-b border-slate-300'>
-            <nav className="flex items-center justify-between border-slate-300 border-b py-3">
+        <section className='pb-20 md:mx-16 mx-4 border-b border-slate-300'>
+            <nav className="md:flex items-center justify-between border-slate-300 border-b py-3">
 
-                <p className="text-3xl logo-span">
+                <p className="md:text-3xl text-lg logo-span">
                     TODAY'S TRENDING
                 </p>
 
 
-                <Link href="#" className='text-sm underline text-slate-500 '>
+                <Link href="#" className='md:text-sm text-xs underline text-slate-500 '>
                     View all
                 </Link>
             </nav>
@@ -27,7 +27,7 @@ const Trending = ({ data }) => {
                 </div>
 
 
-                <div className='grid grid-cols-3 gap-x-10 mt-4'>
+                <div className='md:grid grid-cols-3 gap-x-10 md:space-y-0 space-y-6 mt-4'>
                     {data.results.slice(4, 7).map((section) => (
                         <>
                             <div>

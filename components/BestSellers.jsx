@@ -3,14 +3,14 @@ import React from 'react'
 
 const BestSellers = ({ data }) => {
     return (
-        <section className='pb-20 mx-16 border-b border-slate-300'>
-            <nav className="flex items-center justify-between border-slate-300 border-b py-3">
+        <section className='pb-20 mx-4 md:mx-16 border-b border-slate-300'>
+            <nav className="md:flex items-center justify-between border-slate-300 border-b py-3">
 
-                <p className="text-3xl logo-span">
+                <p className="text-lg md:text-3xl logo-span">
                     NYT BEST SELLERS
                 </p>
 
-                <Link href="#" className='text-sm underline text-slate-500 '>
+                <Link href="#" className='text-xs md:text-sm underline text-slate-500 '>
                     View all
                 </Link>
             </nav>
@@ -25,7 +25,7 @@ const BestSellers = ({ data }) => {
                     </div>
                 </div>
 
-                <div className='mt-4 grid grid-cols-4 space-x-10'>
+                <div className='mt-4 md:grid grid-cols-4 space-y-12 md:space-y-0 md:space-x-10'>
 
                     {
                         data?.results.books.slice(0, 4).map((bestSellers) => (

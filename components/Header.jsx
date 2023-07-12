@@ -3,10 +3,10 @@ import Image from "next/image";
 const Header = ({ data, frontPageData }) => {
 
     return (
-        <section className="pt-5 border-b border-slate-300 pb-16 mx-16">
+        <section className="pt-5 border-b border-slate-300 md:pb-16 pb-10 md:mx-16 mx-4">
 
             <div className="md:grid grid-cols-5 gap-x-4">
-                <div className="col-span-3 border-r border-slate-300 pr-4">
+                <div className="col-span-3 md:border-r border-b md:pb-0 pb-4 border-slate-300 pr-4">
                     <div className=" space-y-6">
                         {frontPageData.results.slice(0, 2).map((section) => (
                             <>

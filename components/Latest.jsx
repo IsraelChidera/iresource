@@ -4,15 +4,15 @@ import React from 'react'
 const Latest = ({ data }) => {
 
     return (
-        <section className='pb-20 mx-16 border-b border-slate-300'>
-            <nav className="flex items-center justify-between border-slate-300 border-b py-3">
+        <section className='pb-20 md:mx-16 mx-4 border-b border-slate-300'>
+            <nav className="md:flex items-center justify-between border-slate-300 border-b py-3">
 
-                <p className="text-3xl logo-span">
+                <p className="md:text-3xl text-lg logo-span">
                     MOST VIEWED ARTICLES
                 </p>
 
 
-                <Link href="#" className='text-sm underline text-slate-500 '>
+                <Link href="#" className='md:text-sm text-xs underline text-slate-500 '>
                     View all
                 </Link>
             </nav>
@@ -21,7 +21,7 @@ const Latest = ({ data }) => {
                 <div className='space-y-20'>
                     {
                         data.results.slice(0, 3).map((section) => (
-                            <div className='grid grid-cols-3 space-x-20'>
+                            <div className='md:grid grid-cols-3 space-x-20'>
                                 <div className='col-span-1'>
                                     {section.media?.map((img) => (
                                         img['media-metadata'].slice(2,3).map((x) => (
@@ -32,7 +32,7 @@ const Latest = ({ data }) => {
                                     ))}
                                 </div>
 
-                                <div className='col-span-2'>
+                                <div className='col-span-2 md:mt-0 mt-6'>
                                     <div className="relative logo-span">
                                         <div className="absolute top-1.5 -left-10 h-px w-5 bg-slate-600"></div>
                                         <p className='text-sm'>{section.byline}</p>
