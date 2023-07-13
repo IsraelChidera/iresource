@@ -7,7 +7,7 @@ import Newsletter from "@/components/Newsletter";
 import Trending from "@/components/Trending";
 
 async function getTopStories() {
-  const baseUrl = "https://api.nytimes.com/svc/news/v3/content/nyt/arts.json";
+  const baseUrl = `https://api.nytimes.com/svc/news/v3/content/nyt/arts.json`;
   const apiKey = process.env.API_KEY;
   const res = await fetch(`${baseUrl}?api-key=${apiKey}`);
 
@@ -19,7 +19,7 @@ async function getTopStories() {
 }
 
 async function getPopularStories() {
-  const baseUrl = "https://api.nytimes.com/svc/topstories/v2/arts.json";
+  const baseUrl = `https://api.nytimes.com/svc/topstories/v2/arts.json`;
   const apiKey = process.env.API_KEY;
   const res = await fetch(`${baseUrl}?api-key=${apiKey}`);
 
@@ -31,7 +31,7 @@ async function getPopularStories() {
 }
 
 const getMostViewedArticles = async () => {
-  const baseUrl = "https://api.nytimes.com/svc/mostpopular/v2/viewed/30.json";
+  const baseUrl = `https://api.nytimes.com/svc/mostpopular/v2/viewed/30.json`;
   const apiKey = process.env.API_KEY;
   const res = await fetch(`${baseUrl}?api-key=${apiKey}`);
 
